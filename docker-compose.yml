@@ -1,0 +1,12 @@
+services:
+  itbot:
+    build: .
+    image: kalinka_bot
+    container_name: kalinka_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - TZ=Etc/GMT-5
+    volumes:
+      - ./data:/app/data
